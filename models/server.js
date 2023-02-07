@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const cors = require('cors')
 
 class Server {
@@ -25,10 +25,10 @@ class Server {
 
     }
 
-    listens() {
+    listen() {
         this.app.listen( this.port, () => {
-            console.log('Servidor corriendo en puerto ', this.port)
-        })
+            console.log('Servidor corriendo en puerto', this.port )
+        });
     }
 
 
