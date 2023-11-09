@@ -16,7 +16,7 @@ const UsuarioSchema = Schema({
         type: String,
         required: [true, 'La contraseña es obligatoria'],
     },
-    imagen: {
+    img: {
         type: String,
     },
     rol: {
@@ -36,7 +36,8 @@ const UsuarioSchema = Schema({
 
 
 UsuarioSchema.methods.toJSON = function () {
-    const {__v,password, ...user } = this.toObject()
+    const {__v,password,_id,correo, ...user } = this.toObject()
+    user.uid =_id
     return user
 }
 
